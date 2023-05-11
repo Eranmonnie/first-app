@@ -17,6 +17,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/post', function () {
-    return view('post');
+Route::get('/post/{post}', function ($slug) {
+
+    $data = '';
+    
+    if($slug === '1'){
+        $data = 'first';
+    }
+
+    else if($slug === '2'){
+        $data = 'second';
+    }
+     
+    else if($slug === '3'){
+        $data = 'third';
+    }
+
+    $data = file_get_contents(__DIR__ . "/../resources/posts/{$data}-post.html");
+
+    if (! file_exists($data)){
+        return redirect('/'); 
+
+    }
+    return view('post', [
+        'post' => $data
+    ]);
+
 });

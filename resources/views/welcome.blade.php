@@ -10,21 +10,21 @@
 <body>
     <h1>Posts</h1>
     <article>
-        <h2><a href="/post"> first blog post</a></h2>
+        <h2><a href="/post/1"> first blog post</a></h2>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia accusamus repellat consequuntur tenetur accusantium vero cum incidunt atque facere, eaque voluptatibus optio cupiditate veritatis natus, ex animi ab molestiae molestias id necessitatibus aliquid repudiandae. Ratione eveniet sit repellat soluta harum, praesentium qui est assumenda! Quam deserunt eveniet ipsa error illo.
         </p>
     </article>
 
     <article>
-        <h2><a href="/post"> second blog post</a></h2>
+        <h2><a href="/post/2"> second blog post</a></h2>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia accusamus repellat consequuntur tenetur accusantium vero cum incidunt atque facere, eaque voluptatibus optio cupiditate veritatis natus, ex animi ab molestiae molestias id necessitatibus aliquid repudiandae. Ratione eveniet sit repellat soluta harum, praesentium qui est assumenda! Quam deserunt eveniet ipsa error illo.
         </p>
     </article>
 
     <article>
-        <h2><a href="/post"> third blog post</a></h2>
+        <h2><a href="/post/3"> third blog post</a></h2>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia accusamus repellat consequuntur tenetur accusantium vero cum incidunt atque facere, eaque voluptatibus optio cupiditate veritatis natus, ex animi ab molestiae molestias id necessitatibus aliquid repudiandae. Ratione eveniet sit repellat soluta harum, praesentium qui est assumenda! Quam deserunt eveniet ipsa error illo.
         </p>
