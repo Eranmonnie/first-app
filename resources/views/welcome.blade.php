@@ -8,7 +8,27 @@
     <link rel="stylesheet" href="/app.css">
 </head>
 <body>
-    <h1>hello world </h1>
+    <h1>Posts</h1>
+    <article>
+        <h2>first blog post</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia accusamus repellat consequuntur tenetur accusantium vero cum incidunt atque facere, eaque voluptatibus optio cupiditate veritatis natus, ex animi ab molestiae molestias id necessitatibus aliquid repudiandae. Ratione eveniet sit repellat soluta harum, praesentium qui est assumenda! Quam deserunt eveniet ipsa error illo.
+        </p>
+    </article>
+
+    <article>
+        <h2>second blog post</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia accusamus repellat consequuntur tenetur accusantium vero cum incidunt atque facere, eaque voluptatibus optio cupiditate veritatis natus, ex animi ab molestiae molestias id necessitatibus aliquid repudiandae. Ratione eveniet sit repellat soluta harum, praesentium qui est assumenda! Quam deserunt eveniet ipsa error illo.
+        </p>
+    </article>
+
+    <article>
+        <h2>third blog post </h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia accusamus repellat consequuntur tenetur accusantium vero cum incidunt atque facere, eaque voluptatibus optio cupiditate veritatis natus, ex animi ab molestiae molestias id necessitatibus aliquid repudiandae. Ratione eveniet sit repellat soluta harum, praesentium qui est assumenda! Quam deserunt eveniet ipsa error illo.
+        </p>
+    </article>
     
 </body>
 </html>

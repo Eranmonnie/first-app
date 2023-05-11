@@ -2,5 +2,17 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: aquamarine;
+    max-width: 600px;
+    margin: auto;
+    font-family: sans-serif;
+}
+
+p{
+    line-height: 1.7em;
+}
+
+article + article{
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid grey;
 }
