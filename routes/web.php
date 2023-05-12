@@ -19,28 +19,17 @@ Route::get('/', function () {
 
 Route::get('/post/{post}', function ($slug) {
 
-    $data = '';
+    $path = (__DIR__ . "/../resources/posts/{$slug}-post.html");
     
-    if($slug === '1'){
-        $data = 'first';
-    }
-
-    else if($slug === '2'){
-        $data = 'second';
-    }
-     
-    else if($slug === '3'){
-        $data = 'third';
-    }
-
-    $data = file_get_contents(__DIR__ . "/../resources/posts/{$data}-post.html");
-
-    if (! file_exists($data)){
+    if (! file_exists($path)){
         return redirect('/'); 
 
     }
+
+    $path = file_get_contents($path);
+
     return view('post', [
-        'post' => $data
+        'post' => $path
     ]);
 
-});
+})->where('post', '[A-z]+');
