@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="/app.css">
 </head>
 <body>
-    <?= $post ?>
+    <article>
+        <?= $post ?>
+    </article>
+    
 </body>
 </html>
