@@ -7,9 +7,9 @@ Route::get('/', function () {
     $post=[];
     $document = Post::all();
 
-    $post = array_map (function($document){
+    $post = collect($document)->map(function($document){
         return  new Post($document->title, $document->snippet, $document->body(), $document->date,  $document->link);
-    } ,$document);
+    });
         
     
      return view('welcome', [
