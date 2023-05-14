@@ -7,10 +7,11 @@ Route::get('/', function () {
     $post=[];
     $document = Post::all();
 
-    foreach ($document as $doc){
-        $document = $doc;
-        $post[] = new Post($document->title, $document->snippet, $document->body(), $document->date,  $document->link);
-    }
+    $post = array_map (function($document){
+        return  new Post($document->title, $document->snippet, $document->body(), $document->date,  $document->link);
+    } ,$document);
+        
+    
      return view('welcome', [
         "posts"=> $post,
      ]);

@@ -22,7 +22,6 @@ class Post{
     }
     public static function all(){
        $file =  File::files(resource_path('posts/'));
-
        $doc =  array_map(fn ($file)=> YamlFrontMatter::parseFile($file) , $file);
        return $doc;
 
@@ -32,6 +31,7 @@ class Post{
         if (! file_exists($path)){
            throw new ModelNotFoundException();
         }
+
         return cache()->remember("posts.{$slug}",1000, fn ()=> file_get_contents($path));
         }
 }
