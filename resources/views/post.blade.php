@@ -9,8 +9,8 @@
 </head>
 <body>
     <article>
-        <?= $post->body ?>
-        <?= $post->date ?>
+        {!! $post->body!!}
+        {{$post->date}}
     </article>
     <a href="/">Go back</a>
     
