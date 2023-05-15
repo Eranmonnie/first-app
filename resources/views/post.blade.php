@@ -9,7 +9,8 @@
 </head>
 <body>
     <article>
-        <?= $post ?>
+        <?= $post->body ?>
+        <?= $post->date ?>
     </article>
     <a href="/">Go back</a>
     
