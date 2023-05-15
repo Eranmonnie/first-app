@@ -42,4 +42,13 @@ class Post{
     public static function find($slug){
        return static::all()->firstWhere('link', $slug); 
     }
+    public static function findorFail($slug){
+        $post =  static::all()->firstWhere('link', $slug); 
+
+        if (!$post){
+            throw new ModelNotFoundException();
+        }
+        return $post;
+
+     }
 }
