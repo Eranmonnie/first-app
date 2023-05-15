@@ -4,14 +4,9 @@ use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    $post=[];
-    $document = Post::all();
+   
+    $post = Post::all();
 
-    $post = collect($document)->map(function($document){
-        return  new Post($document->title, $document->snippet, $document->body(), $document->date,  $document->link);
-    });
-        
-    
      return view('welcome', [
         "posts"=> $post,
      ]);

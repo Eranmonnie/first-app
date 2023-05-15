@@ -22,8 +22,18 @@ class Post{
     }
     public static function all(){
        $file =  File::files(resource_path('posts/'));
-       $doc =  array_map(fn ($file)=> YamlFrontMatter::parseFile($file) , $file);
-       return $doc;
+
+       return collect($file)
+       ->map(fn($file)=>YamlFrontMatter::parseFile($file))
+       ->map(fn($document)=>
+        new Post(
+        $document->title,
+        $document->snippet,
+        $document->body(),
+        $document->date,
+        $document->link
+        )
+    );
 
     }
     public static function find($slug){
