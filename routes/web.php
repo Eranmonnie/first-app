@@ -12,10 +12,10 @@ Route::get('/', function () {
      ]);
 });
 
-Route::get('/post/{post}', function ($slug) {
+Route::get('/post/{post}', function ($id) {
     
     //find post by slug and return it to post view
-    $post = Post::findorFail($slug);
+    $post = Post::findorFail($id);
     return view('post', [
         'post'=>$post,
     ]);
