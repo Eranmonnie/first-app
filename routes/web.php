@@ -12,10 +12,9 @@ Route::get('/', function () {
      ]);
 });
 
-Route::get('/post/{post}', function ($id) {
+Route::get('/post/{post:link}', function (Post $post) {
+    //automatically finds post by slug from url
     
-    //find post by slug and return it to post view
-    $post = Post::findorFail($id);
     return view('post', [
         'post'=>$post,
     ]);

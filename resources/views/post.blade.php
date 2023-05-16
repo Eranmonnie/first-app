@@ -1,7 +1,7 @@
 <x-layout>
 <article>
-    {!! $post->body!!}
-    {{$post->date}}
+   {!! $post->body!!} 
+    <p>{{$post->date}}</p>
 </article>
 <a href="/">Go back</a>
 
