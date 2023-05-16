@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('snippet');
+            $table->text('body');
+            $table->string('link');
             $table->timestamps();
+            $table->timestamp('piblished_at')->nullable();
+            
         });
     }
 
