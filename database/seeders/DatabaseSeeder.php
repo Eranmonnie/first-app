@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 Use \App\Models\User;
 Use \App\Models\Category;
+Use \App\Models\Post;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -25,19 +26,46 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        Category::create([
+       $work =  Category::create([
             'name'=>'work',
             'slug'=>'work',
         ]);
 
-        Category::create([
+       $family = Category::create([
             'name'=>'family',
             'slug'=>'family',
         ]);
 
-        Category::create([
+       $school =  Category::create([
             'name'=>'school',
             'slug'=>'school',
+        ]);
+
+        Post::create([
+            'category_id'=> $school->id,
+            'user_id'=> $user->id,
+            'title'=> 'school post',
+            'snippet'=> 'first postt',
+            'body'=> 'ncpiuwberpvjpfibpdiuhdpiuiudfhipudpviupvibdpivafdijvpibpidfiadnfpiudv;akdjdvjd;jdkjb;bdljv',
+            'link'=>'first-post',
+        ]);
+        
+        Post::create([
+            'category_id'=> $work->id,
+            'user_id'=> $user->id,
+            'title'=> 'work post',
+            'snippet'=> 'first postt',
+            'body'=> 'ncpiuwberpvjpfibpdiuhdpiuiudfhipudpviupvibdpivafdijvpibpidfiadnfpiudv;akdjdvjd;jdkjb;bdljv',
+            'link'=>'first-post',
+        ]);
+        
+        Post::create([
+            'category_id'=> $family->id,
+            'user_id'=> $user->id,
+            'title'=> 'family post',
+            'snippet'=> 'first postt',
+            'body'=> 'ncpiuwberpvjpfibpdiuhdpiuiudfhipudpviupvibdpivafdijvpibpidfiadnfpiudv;akdjdvjd;jdkjb;bdljv',
+            'link'=>'first-post',
         ]);
     }
 }
