@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
    
     //solves the n+1 problem 
-    $post = Post::with('Category')->get();
+    $post = Post::with('Category','User')->get();
 
      return view('welcome', [
         "posts"=> $post,

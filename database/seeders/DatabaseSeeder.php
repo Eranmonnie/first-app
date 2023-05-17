@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         //ecscape the errors 
         User::truncate();
         Category::truncate();
+        Post::truncate();
 
        $user =  User::factory()->create();
 
@@ -46,7 +47,7 @@ class DatabaseSeeder extends Seeder
             'user_id'=> $user->id,
             'title'=> 'school post',
             'snippet'=> 'first postt',
-            'body'=> 'ncpiuwberpvjpfibpdiuhdpiuiudfhipudpviupvibdpivafdijvpibpidfiadnfpiudv;akdjdvjd;jdkjb;bdljv',
+            'body'=> '<p>ncpiuwberpvjpfibpdiuhdpiuiudfhipudpviupvibdpivafdijvpibpidfiadnfpiudv;akdjdvjd;jdkjb;bdljv</p>',
             'link'=>'first-post',
         ]);
         
@@ -55,7 +56,7 @@ class DatabaseSeeder extends Seeder
             'user_id'=> $user->id,
             'title'=> 'work post',
             'snippet'=> 'first postt',
-            'body'=> 'ncpiuwberpvjpfibpdiuhdpiuiudfhipudpviupvibdpivafdijvpibpidfiadnfpiudv;akdjdvjd;jdkjb;bdljv',
+            'body'=> '<p>ncpiuwberpvjpfibpdiuhdpiuiudfhipudpviupvibdpivafdijvpibpidfiadnfpiudv;akdjdvjd;jdkjb;bdljv</p>',
             'link'=>'first-post',
         ]);
         
@@ -64,7 +65,7 @@ class DatabaseSeeder extends Seeder
             'user_id'=> $user->id,
             'title'=> 'family post',
             'snippet'=> 'first postt',
-            'body'=> 'ncpiuwberpvjpfibpdiuhdpiuiudfhipudpviupvibdpivafdijvpibpidfiadnfpiudv;akdjdvjd;jdkjb;bdljv',
+            'body'=> '<p>ncpiuwberpvjpfibpdiuhdpiuiudfhipudpviupvibdpivafdijvpibpidfiadnfpiudv;akdjdvjd;jdkjb;bdljv</p>',
             'link'=>'first-post',
         ]);
     }
