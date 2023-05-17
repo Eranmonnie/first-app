@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
    
-    $post = Post::all();
+    //solves the n+1 problem 
+    $post = Post::with('Category')->get();
 
      return view('welcome', [
         "posts"=> $post,
