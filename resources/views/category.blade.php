@@ -10,5 +10,6 @@
         
     </article>
     @endforeach
+    <a href="/">Go back</a>
     
 </x-layout>
