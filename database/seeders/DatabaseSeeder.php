@@ -17,56 +17,64 @@ class DatabaseSeeder extends Seeder
     {
         //ecscape the errors 
         User::truncate();
-        Category::truncate();
+        Category::truncate(); 
         Post::truncate();
+        
 
-       $user =  User::factory()->create();
+       $user = User::factory()->create([
+        'name' =>  "john doe"
+       ]);
+
+       $post =  Post::factory(4)->create([
+
+            "user_id" => $user->id
+        ]);
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
 
-       $work =  Category::create([
-            'name'=>'work',
-            'slug'=>'work',
-        ]);
+    //    $work =  Category::create([
+    //         'name'=>'work',
+    //         'slug'=>'work',
+    //     ]);
 
-       $family = Category::create([
-            'name'=>'family',
-            'slug'=>'family',
-        ]);
+    //    $family = Category::create([
+    //         'name'=>'family',
+    //         'slug'=>'family',
+    //     ]);
 
-       $school =  Category::create([
-            'name'=>'school',
-            'slug'=>'school',
-        ]);
+    //    $school =  Category::create([
+    //         'name'=>'school',
+    //         'slug'=>'school',
+    //     ]);
 
-        Post::create([
-            'category_id'=> $school->id,
-            'user_id'=> $user->id,
-            'title'=> 'school post',
-            'snippet'=> 'first postt',
-            'body'=> '<p>ncpiuwberpvjpfibpdiuhdpiuiudfhipudpviupvibdpivafdijvpibpidfiadnfpiudv;akdjdvjd;jdkjb;bdljv</p>',
-            'link'=>'first-post',
-        ]);
+    //     Post::create([
+    //         'category_id'=> $school->id,
+    //         'user_id'=> $user->id,
+    //         'title'=> 'school post',
+    //         'snippet'=> 'first postt',
+    //         'body'=> '<p>ncpiuwberpvjpfibpdiuhdpiuiudfhipudpviupvibdpivafdijvpibpidfiadnfpiudv;akdjdvjd;jdkjb;bdljv</p>',
+    //         'link'=>'first-post',
+    //     ]);
         
-        Post::create([
-            'category_id'=> $work->id,
-            'user_id'=> $user->id,
-            'title'=> 'work post',
-            'snippet'=> 'first postt',
-            'body'=> '<p>ncpiuwberpvjpfibpdiuhdpiuiudfhipudpviupvibdpivafdijvpibpidfiadnfpiudv;akdjdvjd;jdkjb;bdljv</p>',
-            'link'=>'first-post',
-        ]);
+    //     Post::create([
+    //         'category_id'=> $work->id,
+    //         'user_id'=> $user->id,
+    //         'title'=> 'work post',
+    //         'snippet'=> 'first postt',
+    //         'body'=> '<p>ncpiuwberpvjpfibpdiuhdpiuiudfhipudpviupvibdpivafdijvpibpidfiadnfpiudv;akdjdvjd;jdkjb;bdljv</p>',
+    //         'link'=>'first-post',
+    //     ]);
         
-        Post::create([
-            'category_id'=> $family->id,
-            'user_id'=> $user->id,
-            'title'=> 'family post',
-            'snippet'=> 'first postt',
-            'body'=> '<p>ncpiuwberpvjpfibpdiuhdpiuiudfhipudpviupvibdpivafdijvpibpidfiadnfpiudv;akdjdvjd;jdkjb;bdljv</p>',
-            'link'=>'first-post',
-        ]);
+    //     Post::create([
+    //         'category_id'=> $family->id,
+    //         'user_id'=> $user->id,
+    //         'title'=> 'family post',
+    //         'snippet'=> 'first postt',
+    //         'body'=> '<p>ncpiuwberpvjpfibpdiuhdpiuiudfhipudpviupvibdpivafdijvpibpidfiadnfpiudv;akdjdvjd;jdkjb;bdljv</p>',
+    //         'link'=>'first-post',
+    //     ]);
     }
 }
