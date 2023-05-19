@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
    
     //solves the n+1 problem 
-    $post = Post::latest()->with('Category','User')->get();
+    $post = Post::latest()->get();
 
      return view('welcome', [
         "posts"=> $post,
@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('/post/{post:link}', function (Post $post) {
     //automatically finds post by slug from url
     return view('post', [
-        'post'=>$post->load('Category', 'User'),
+        'post'=>$post    ,
     ]);
 });
 

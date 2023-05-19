@@ -9,6 +9,8 @@ class Post extends Model
 {
     use HasFactory;
     // protected $guarded = ['id']; the oposite of fillable
+
+    //for eager loading we can use protectes $with = ['category', 'user']
     protected $fillable = ['title', 'sippet', 'body', 'link'];
 
     // public function getRouteKeyName(){
