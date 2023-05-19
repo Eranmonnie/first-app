@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::get('/post/{post:link}', function (Post $post) {
     //automatically finds post by slug from url
     return view('post', [
-        'post'=>$post    ,
+        'post'=>$post,
     ]);
 });
 
@@ -27,7 +27,8 @@ Route::get('/posts/category/{category:name}', function(Category $category){
     return view('category', [
 
         //find posts where category->name == slug;
-        'posts'=>$category->Post->load('Category', 'User'),
+        //eager loading with load
+        'posts'=>$category->Post,
     ]);
 
 });
