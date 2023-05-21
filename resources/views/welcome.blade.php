@@ -12,5 +12,6 @@
 
         </article>
         @endforeach
+
         
 </x-layout>
