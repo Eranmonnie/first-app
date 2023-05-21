@@ -1,6 +1,21 @@
 <x-layout>
+
+    @include ('_post-header')
+    <x-post-card-feature/>
+
+    <div class="lg:grid lg:grid-cols-2">
+        <x-post-card/>
+        <x-post-card/>
+       
+    </div>
+
+    <div class="lg:grid lg:grid-cols-3">
+        <x-post-card/>
+        <x-post-card/>
+        <x-post-card/>
+    </div>
         
-        <h1>Posts</h1>
+        {{-- <h1>Posts</h1>
         @foreach ($posts as $post)
         <article>
             <h1><a href="/post/{{$post->link}}"> title: {{$post->title}}</a></h1>
@@ -11,7 +26,9 @@
             
 
         </article>
-        @endforeach
+        @endforeach --}}
+
+
 
         
 </x-layout>
