@@ -1,31 +1,33 @@
+
+@props(["posts"])
 <article
     class="transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
     <div class="py-6 px-5 lg:grid" style="align-items:center ">
-        <div class="flex-1">
+        <div class="flex-1" style="margin-bottom: 1em;">
             <img src="\images\illustration-1.png" alt="Blog Post illustration" class="rounded-xl">
         </div>
 
         <div class="flex-1 flex flex-col justify-between">
             <header class="mt-8 lg:mt-0">
                 <div class="space-x-2">
-                    'lkdnflk'
+                    <x-category-button :category="$posts->Category" />
                 </div>
 
                 <div class="mt-4">
                     <h1 class="text-3xl">
-                        <a href="#">
-                           'lskrn'rglkn'efkg
+                        <a href="/post/{{$posts->link}}">
+                            {{$posts->title}}
                         </a>
                     </h1>
 
                     <span class="mt-2 block text-gray-400 text-xs">
-                        Published baldjkbfjhf
+                        <time>{{$posts->created_at->diffForHumans()}}</time>
                     </span>
                 </div>
             </header>
 
             <div class="text-sm mt-2 space-y-4">
-               'lkjddhksn rkrhm'
+                {{$posts->snippet}}
             </div>
 
             <footer class="flex justify-between items-center mt-8">
@@ -33,7 +35,7 @@
                     <img src="/images/lary-avatar.svg" alt="Lary avatar">
                     <div class="ml-3">
                         <h5 class="font-bold">
-                            <a href="#">pijsbpjkv;asdj</a>
+                            <a href="/posts/user/{{$posts->User->name}}">{{$posts->User->name}}</a>
                         </h5>
                     </div>
                 </div>
