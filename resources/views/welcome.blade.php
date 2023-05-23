@@ -1,15 +1,15 @@
 <x-layout>
 
     @include ('_post-header')
-    
-    <x-post-card-feature :posts="$posts[0]"/>
 
-    <div class="lg:grid lg:grid-cols-2">
-        @foreach($posts->skip(1) as $post)
-        <x-post-card :posts="$post"/>
-        @endforeach
-    </div>
-    
+    @if ($posts->count())
+        <x-post-grid :posts="$posts"/>
+    @else
+
+    <p class="text-center">NO posts yet come back later</p>
+
+    @endif
+
 {{-- 
     <div class="lg:grid lg:grid-cols-3">
         <x-post-card/>
