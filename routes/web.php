@@ -14,7 +14,7 @@ Route::get('/', function () {
         "posts"=> $post,
         "categories"=> Category::all(),
      ]);
-});
+})->name('home');
 
 Route::get('/post/{post:link}', function (Post $post) {
     //automatically finds post by slug from url
@@ -22,7 +22,7 @@ Route::get('/post/{post:link}', function (Post $post) {
         'post'=>$post,
         "categories"=> Category::all(),
     ]);
-});
+})->name('post');
 
 Route::get('/posts/category/{category:name}', function(Category $category){
 
@@ -35,11 +35,11 @@ Route::get('/posts/category/{category:name}', function(Category $category){
         "categories"=> Category::all(),
     ]);
 
-});
+})->name('category');
 
 Route::get('/posts/user/{user:name}', function(User $user){
     return view('welcome',[
         'posts' => $user->Post,
         "categories"=> Category::all(),
     ]);
-});
+})->name('user');
