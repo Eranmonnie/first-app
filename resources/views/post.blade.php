@@ -1,13 +1,4 @@
-    {{-- <x-layout>
-    <article>
-        <h1>{{$post->title}}</h1>
-    <h3>by {{$post->User->name}} <a href="/post/{{$post->link}}">{{$post->title}}</a></h3> 
-    {!! $post->body!!} 
-        <p>{{$post->date}}</p>
-    </article>
-    <a href="/">Go back</a>
 
-    </x-layout> --}}
 <x-layout>
     <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
         <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-10">
