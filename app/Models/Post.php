@@ -27,12 +27,24 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function scopeFilter($query, $fillable){
+    public function scopeFilter($query, array $fillable){
         $query->when($fillable['search'] ?? false, fn($query, $search)=>
             $query
                 ->where('title', 'like', '%' . $search . '%')
-                ->where('snippet', 'like', '%' . $search . '%'));
-       
+                ->orwhere('snippet', 'like', '%' . $search . '%'));
+
+
+        $query->when($fillable['category'] ?? false, fn($query, $category)=>
+            $query
+                ->whereExists(fn($query)=>
+                    $query->from('categories')
+                        ->whereColumn('categories.id','posts.category_id')
+                        ->where('categories.name', $category)
+                        ));
+    
+    
+
+                
     }
     
 }
