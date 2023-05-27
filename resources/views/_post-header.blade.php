@@ -34,7 +34,7 @@
         <x-dropdown-item href="/">All</x-dropdown-item>
             @foreach($categories as $category)
 
-            <x-dropdown-item href="/posts/category/{{$category->name}}"
+            <x-dropdown-item href="/?category={{$category->name}}"
             :setting="isset($categoryname)&& $categoryname->is($category)" 
             >
 

@@ -35,12 +35,15 @@ class Post extends Model
 
 
         $query->when($fillable['category'] ?? false, fn($query, $category)=>
-            $query
-                ->whereExists(fn($query)=>
-                    $query->from('categories')
-                        ->whereColumn('categories.id','posts.category_id')
-                        ->where('categories.name', $category)
-                        ));
+            // $query
+            //     ->whereExists(fn($query)=>
+            //         $query->from('categories')
+            //             ->whereColumn('categories.id','posts.category_id')
+            //             ->where('categories.name', $category)
+            //             )
+            $query->whereHas('Category', fn($query)=>
+            $query->where('name', $category))
+                    );
     
     
 

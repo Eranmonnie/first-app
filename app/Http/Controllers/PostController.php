@@ -12,8 +12,9 @@ class PostController extends Controller
             $post = Post::latest()->filter(request(['search','category']))->get();
  
             return view('welcome', [
-                "posts"=> $post,
-                "categories"=> Category::all(),
+                'posts'=> $post,
+                'categories'=> Category::all(),
+                'categoryname'=> Category::firstWhere('name', request('category'))
                     ]);
             }
 
@@ -21,19 +22,19 @@ class PostController extends Controller
             //automatically finds post by its slug in the db from url
             return view('post', [
                 'post'=>$post,
-                "categories"=> Category::all(),
+                'categories'=> Category::all(),
             ]);
         }
 
-        public function showByCategory(Category $category){
+        // public function showByCategory(Category $category){
 
-            return view('welcome', [
+        //     return view('welcome', [
         
-                //find posts where category->name == slug;
-                //eager loading with load
-                'posts'=>$category->Post,
-                'categoryname'=>$category,
-                "categories"=> Category::all(),
-            ]);
-        }
+        //         //find posts where category->name == slug;
+        //         //eager loading with load
+        //         'posts'=>$category->Post,
+        //         'categoryname'=>$category,
+        //         "categories"=> Category::all(),
+        //     ]);
+        // }
 }
