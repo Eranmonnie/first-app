@@ -13,7 +13,6 @@ class PostController extends Controller
  
             return view('welcome', [
                 'posts'=> $post,
-                'categories'=> Category::all(),
                 'categoryname'=> Category::firstWhere('name', request('category'))
                     ]);
             }
@@ -22,7 +21,6 @@ class PostController extends Controller
             //automatically finds post by its slug in the db from url
             return view('post', [
                 'post'=>$post,
-                'categories'=> Category::all(),
             ]);
         }
 
