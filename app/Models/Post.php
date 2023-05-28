@@ -29,11 +29,13 @@ class Post extends Model
 
     public function scopeFilter($query, array $fillable){
         $query->when($fillable['search'] ?? false, fn($query, $search)=>
-            $query
-                ->where('title', 'like', '%' . $search . '%')
-                ->orwhere('snippet', 'like', '%' . $search . '%'));
-
-
+            $query->where(fn($query)=>
+                $query
+                    ->where('title', 'like', '%' . $search . '%')
+                    ->orwhere('snippet', 'like', '%' . $search . '%'))
+                
+    );
+                
         $query->when($fillable['category'] ?? false, fn($query, $category)=>
             // $query
             //     ->whereExists(fn($query)=>
