@@ -25,8 +25,8 @@
 
 <x-dropdown-item href="/">All</x-dropdown-item>
     @foreach($categories as $category)
-
-    <x-dropdown-item href="/?category={{$category->name}}"
+{{-- //http build query to tur ass arrays into querystrings  --}}
+    <x-dropdown-item href="/?category={{$category->name}}&{{ http_build_query(request()->except('categoty') )}}"
     :setting="isset($categoryname)&& $categoryname->is($category)" 
     >
 
