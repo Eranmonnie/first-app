@@ -13,7 +13,6 @@ class PostController extends Controller
  
             return view('welcome', [
                 'posts'=> $post,
-                'categoryname'=> Category::firstWhere('name', request('category'))
                     ]);
             }
 
