@@ -14,7 +14,7 @@
                     <img src="/images/lary-avatar.svg" alt="Lary avatar">
                     <div class="ml-3 text-left">
                         <h5 class="font-bold">
-                            <a href="/?author={{ $post->User->username }}">{{ $post->User->name }}</a>
+                            <a href="/?user={{ $post->User->name}}">{{ $post->User->name }}</a>
                         </h5>
                     </div>
                 </div>

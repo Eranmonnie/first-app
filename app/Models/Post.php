@@ -46,7 +46,18 @@ class Post extends Model
             $query->whereHas('Category', fn($query)=>
             $query->where('name', $category))
                     );
-    
+
+            $query->when($fillable['user'] ?? false, fn($query, $user)=>
+            // $query
+            //     ->whereExists(fn($query)=>
+            //         $query->from('users')
+            //             ->whereColumn('users.id','posts.users_id')
+            //             ->where('users.name', $user)
+            //             )
+            $query->whereHas('User', fn($query)=>
+            $query->where('name', $user))
+                    );
+
     
 
                 

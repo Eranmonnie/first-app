@@ -9,7 +9,7 @@ use App\Models\Category;
 class PostController extends Controller
 {
         public function index(){
-            $post = Post::latest()->filter(request(['search','category']))->get();
+            $post = Post::latest()->filter(request(['search','category', 'user']))->paginate(3)->withQueryString();
  
             return view('welcome', [
                 'posts'=> $post,

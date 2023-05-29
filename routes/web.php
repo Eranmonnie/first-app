@@ -11,10 +11,3 @@ Route::get('/', [PostController::class ,'index'])->name('home');
 Route::get('/post/{post:link}',[PostController::class , 'showByPost'])->name('post');
 
 
-
-Route::get('/posts/user/{user:name}', function(User $user){
-    return view('welcome',[
-        'posts' => $user->Post,
-        "categories"=> Category::all(),
-    ]);
-})->name('user');

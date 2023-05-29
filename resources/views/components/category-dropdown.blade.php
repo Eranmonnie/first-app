@@ -23,10 +23,10 @@
 
     </x-slot>
 
-<x-dropdown-item href="/">All</x-dropdown-item>
+<x-dropdown-item href="/?{{http_build_query(request()->except('category', 'page'))}}">All</x-dropdown-item>
     @foreach($categories as $category)
 {{-- //http build query to tur ass arrays into querystrings  --}}
-    <x-dropdown-item href="/?category={{$category->name}}&search={{request('search')}}"
+    <x-dropdown-item href="/?category={{$category->name}}&{{http_build_query(request()->except('category', 'page'))}}"
     :setting="isset($categoryname)&& $categoryname->is($category)" 
     >
 

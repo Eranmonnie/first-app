@@ -35,7 +35,7 @@
                     <img src="/images/lary-avatar.svg" alt="Lary avatar">
                     <div class="ml-3">
                         <h5 class="font-bold">
-                            <a href="/posts/user/{{$posts->User->name}}">{{$posts->User->name}}</a>
+                            <a href="/?user={{$posts->User->name}}">{{$posts->User->name}}</a>
                         </h5>
                     </div>
                 </div>
