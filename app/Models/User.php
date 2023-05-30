@@ -42,6 +42,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function  setPasswordAtribute($password){
+            $this->attributes['password'] = bcrypt($password);
+    }//mutator 
+
+    // public function  getUsernameAtribute($username){
+    //     return ucwords($username);
+    // }//accessor there are also accessor that mutate what is retrieved from the db
+
+
+
     public function post(){
         return $this->hasMany(Post::class);
     }
