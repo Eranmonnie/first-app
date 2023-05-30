@@ -1,6 +1,6 @@
 <x-layout>
 
-    @include ('_post-header')
+    @include ('post._post-header')
 
     @if ($posts->count())
         <x-post-grid :posts="$posts"/>

@@ -11,14 +11,14 @@ class PostController extends Controller
         public function index(){
             $post = Post::latest()->filter(request(['search','category', 'user']))->paginate(3)->withQueryString();
  
-            return view('welcome', [
+            return view('post.welcome', [
                 'posts'=> $post,
                     ]);
             }
 
         public function showByPost(Post $post) {
             //automatically finds post by its slug in the db from url
-            return view('post', [
+            return view('post.post', [
                 'post'=>$post,
             ]);
         }
