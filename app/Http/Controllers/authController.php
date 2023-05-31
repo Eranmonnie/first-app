@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class authController extends Controller
 {
@@ -11,17 +12,18 @@ class authController extends Controller
         return view('auth.create');
     }
     public function store (){
-      $attribius = request()->validate([
-            'username'=>'required',
-            'name'=>['required'],
-            'email'=>['required','email'],
-            'password'=>['required'],
+      $attributes = request()->validate([
+            'username'=>['required','max:255',  Rule::unique('users','username')],
+            'name'=>['required' ,'min:3', 'max:255'],
+            'email'=>['required','email', 'max:255', Rule::unique('users','email')],
+            'password'=>['required', 'min:7', 'max:255'],
 
         ]);
-        
-        User::create($attribius);
 
-        return redirect('/');
+        User::create($attributes);
+        session()->flash('success', 'you have been registered in successfully');
+
+        return redirect('/');//we could use with('success', 'bla bla bla')
     }
 
 }
