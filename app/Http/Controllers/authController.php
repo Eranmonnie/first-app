@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\auth;
 use Illuminate\Validation\Rule;
 
 class authController extends Controller
@@ -20,10 +21,12 @@ class authController extends Controller
 
         ]);
 
-        User::create($attributes);
-        session()->flash('success', 'you have been registered in successfully');
+       $user =  User::create($attributes);
+       auth::login($user);
+       
+       session()->flash('success', 'you have been registered in successfully');
 
-        return redirect('/');//we could use with('success', 'bla bla bla')
+       return redirect('/');//we could use with('success', 'bla bla bla')
     }
 
 }
