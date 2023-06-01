@@ -63,6 +63,7 @@
                 @else
                     
                     <a href="/signup" class="text-xs font-bold uppercase">Register</a>
+                    <a href="/login" class="text-xs font-bold uppercase">Login</a>
                 @endauth
                
                 <a href="#newsletter"

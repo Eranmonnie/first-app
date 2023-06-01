@@ -11,6 +11,10 @@ Route::get('/post/{post:link}',[PostController::class , 'showByPost'])->name('po
 
 Route::get('/signup', [authController::class, 'create'])->middleware('guest');
 Route::post('/signup', [authController::class, 'store'])->middleware('guest');
+
+Route::get('/login', [sessionController::class, 'create'])->middleware('guest');
+Route::post('/login', [sessionController::class, 'store'])->middleware('guest');
+
 Route::post('/logout', [sessionController::class, 'destroy'])->middleware('auth');
 
 
