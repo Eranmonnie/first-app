@@ -27,7 +27,7 @@ class sessionController extends Controller
         //verify password
         //if true send user instance to the auth::login()function 
         if (auth()->attempt($user)){
-            session()->regenerate()
+            session()->regenerate();
             session()->flash('success', 'Welcome back');
             return redirect("/");
         }
