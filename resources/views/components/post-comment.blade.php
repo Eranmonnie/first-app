@@ -1,3 +1,4 @@
+@props(['comment'])
 
     <article class="flex bg-gray-100 p-6 rounded-xl border border-gray-200 space-x-4">
 
@@ -10,18 +11,16 @@
             <header class="mb-4">
 
                 <h3 class="font-bold">
-                     John doe
+                     {{$comment->User->username}}
                 </h3>
 
                 <p class="text-xs"> 
-                    <time>Posted 8 months ago</time> 
+                    <time>{{$comment->created_at->diffForHumans()}}</time> 
                 </p>
 
             </header>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-             dolores culpa amet beatae vitae sunt excepturi exercitationem volu
-            soluta officia numquam exercitationem in voluptate, fugiat quos id.</p>
+            <p>{{$comment->body}}</p>
 
         </div>
 

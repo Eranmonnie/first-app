@@ -11,7 +11,7 @@ class Post extends Model
     // protected $guarded = ['id']; the oposite of fillable
 
     //for eager loading we can use 
-    protected $with = ['Category', 'User'];
+    protected $with = ['Category', 'User', 'Comment'];
     protected $fillable = ['title', 'sippet', 'body', 'link'];
 
     // public function getRouteKeyName(){
