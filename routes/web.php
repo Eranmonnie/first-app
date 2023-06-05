@@ -4,7 +4,10 @@ use App\Http\Controllers\authController;
 use App\Http\Controllers\PostCommentController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\sessionController;
+use App\Http\Controllers\MailchimpController;
 use Illuminate\Support\Facades\Route;
+
+Route::post('/newsletter', [MailchimpController::class, 'store']);
 
 Route::get('/', [PostController::class ,'index'])->name('home');
 
