@@ -85,6 +85,7 @@
  
                 </form>
                 </x-pannel>
+                
                 @else
                     <p class="font-semibold">
                         <a href="/signup" class="hover-underline">Register</a> or 
