@@ -3,14 +3,14 @@ namespace App\services;
  Use MailchimpMarketing\ApiClient;
 class mailchimp {
 
-public function addToNewsletter($email, $links= null){
-    $inks ??=config('services.mailchimp.lists.subscribers');
+public function addToNewsletter($email, $links = null){
+    $links ??=config('services.mailchimp.lists.subscribers');
     request()->validate([
         'email'=>['required','email']
     ]);
 
    
-    return $this->lists->addListMember($links,
+    return $this->client()->lists->addListMember($links,
         [ "email_address" => request('email'),
          "status" => "subscribed", ] );
     
