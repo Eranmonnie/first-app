@@ -23,15 +23,14 @@ class PostController extends Controller
             ]);
         }
 
-        // public function showByCategory(Category $category){
+        public function create(){
+            return view('post.create',[
+                'categories'=>Category::all()
+            ]);
+        }
+        public function store(){
+            dd(request()->all());
+        }
 
-        //     return view('welcome', [
-        
-        //         //find posts where category->name == slug;
-        //         //eager loading with load
-        //         'posts'=>$category->Post,
-        //         'categoryname'=>$category,
-        //         "categories"=> Category::all(),
-        //     ]);
-        // }
+
 }
