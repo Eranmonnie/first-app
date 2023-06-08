@@ -30,7 +30,7 @@ class Post extends Model
     public function comment(){
         return $this->hasMany(Comment::class);
     }
-
+    
     public function scopeFilter($query, array $fillable){
         $query->when($fillable['search'] ?? false, fn($query, $search)=>
             $query->where(fn($query)=>

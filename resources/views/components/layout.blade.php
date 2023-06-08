@@ -51,6 +51,7 @@
                 @auth
                     <span class="text-xs font-bold uppercase">Welcome,  {{auth()->user()->name}} !!</span>
                     <a href="/admin/post/create" class="bg-blue-500 px-3 py-2 text-xs text-white font-semibold rounded-full">Create Post</a>
+                    <a href="/?user={{auth()->user()->name}}" class="bg-blue-500 px-3 py-2 text-xs text-white font-semibold rounded-full">My Posts</a>
 
                     <form action="/logout" method="post">
                         @csrf
