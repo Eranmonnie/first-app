@@ -16,6 +16,7 @@
             id = "{{$name}}"
             value = "{{old($name)}}"
             required  
+            {{$attributes}}
     >
     <x-form.error name="{{$name}}"/>
 </div>

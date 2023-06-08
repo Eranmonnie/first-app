@@ -17,7 +17,7 @@ class admin
     
     { 
         if (auth()->user()?->name !== 'ajala feranmi' ){
-            session()->flash('success', 'you need to be signed in to create a post');
+            session()->flash('success', 'you need to be signed in to preform that action');
             return back();
 
         }

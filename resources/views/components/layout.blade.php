@@ -49,7 +49,8 @@
 
             <div class="mt-8 md:mt-0 flex items-center " style="display:flex;gap:1em">
                 @auth
-                    <span>Welcome,  {{auth()->user()->name}} !!</span>
+                    <span class="text-xs font-bold uppercase">Welcome,  {{auth()->user()->name}} !!</span>
+                    <a href="/admin/post/create" class="bg-blue-500 px-3 py-2 text-xs text-white font-semibold rounded-full">Create Post</a>
 
                     <form action="/logout" method="post">
                         @csrf
